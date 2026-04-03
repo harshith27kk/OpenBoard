@@ -103,8 +103,19 @@ yellow.addEventListener("click", function () {
 pencilSlider.addEventListener("change" , function(){
     ctx.lineWidth = pencilSlider.value;
     pencilWidth = pencilSlider.value;
+    document.querySelector("#pencil-size-value").textContent = pencilSlider.value;
 })
+
+pencilSlider.addEventListener("input" , function(){
+    document.querySelector("#pencil-size-value").textContent = pencilSlider.value;
+})
+
 eraserSlider.addEventListener("change" , function(){
     ctx.lineWidth = eraserSlider.value;
     eraserWidth = eraserSlider.value;
+    document.querySelector("#eraser-size-value").textContent = eraserSlider.value;
+})
+
+eraserSlider.addEventListener("input" , function(){
+    document.querySelector("#eraser-size-value").textContent = eraserSlider.value;
 })
