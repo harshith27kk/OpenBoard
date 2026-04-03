@@ -3,104 +3,146 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>WhiteBoard</title>
+    <title>OpenBoard - Collaborative Whiteboard</title>
 
     <!-- StyleSheets -->
     <link rel="stylesheet" href="./style.css" />
   </head>
 
   <body>
-    <!-- Tools -->
+    <!-- Tools Toolbar -->
     <div class="tools">
       <div class="tool-items">
-        <div class="tool active-tool" id="pencil">
-          <div class="tool-img">
-            <img
-              src="./resources/resources-master/NewIcons/Black_Pencil.svg"
-              alt=""
-            />
-          </div>
-          <div class="tool-options" id="pencil-options">
-            <div class="pencil-slider">
-              <input
-                type="range"
-                name=""
-                id="pencil-size"
-                min="1"
-                max="40"
-                value="1"
-              />
-            </div>
-            <div class="color-options">
-              <div class="black" id="black"></div>
-              <div class="red" id="red"></div>
-              <div class="blue" id="blue"></div>
-              <div class="yellow" id="yellow"></div>
-            </div>
-          </div>
-        </div>
-        <div class="tool" id="eraser">
-          <div class="tool-img">
-            <img
-              src="./resources/resources-master/NewIcons/Eraser.svg"
-              alt=""
-            />
-          </div>
-          <div class="tool-options" id="eraser-options">
-            <div class="eraser-slider">
-              <input
-                type="range"
-                name=""
-                id="eraser-size"
-                min="1"
-                max="40"
-                value="1"
-              />
-            </div>
-          </div>
-        </div>
-        <div class="tool" id="sticky">
-          <div class="tool-img">
-            <img
-              src="./resources/resources-master/NewIcons/StickyNote.svg"
-              alt=""
-            />
-          </div>
-        </div>
-        <div class="tool" id="upload-img">
-          <label for="upload">
+        <!-- Pencil Tool -->
+        <div class="tool-wrapper">
+          <div class="tool active-tool" id="pencil" title="Pencil">
             <div class="tool-img">
               <img
-                src="./resources/resources-master/NewIcons/Photo.svg"
-                alt=""
+                src="./resources/icons/pencil.svg"
+                alt="Pencil Tool"
               />
             </div>
+            <div class="tool-options" id="pencil-options">
+              <div class="size-display">Size: <span id="pencil-size-value">1</span></div>
+              <div class="pencil-slider">
+                <input
+                  type="range"
+                  name="pencil-size"
+                  id="pencil-size"
+                  min="1"
+                  max="40"
+                  value="1"
+                  title="Adjust brush size"
+                />
+              </div>
+              <div class="color-options">
+                <div class="black" id="black" title="Black"></div>
+                <div class="red" id="red" title="Red"></div>
+                <div class="blue" id="blue" title="Blue"></div>
+                <div class="yellow" id="yellow" title="Yellow"></div>
+              </div>
+            </div>
+          </div>
+          <div class="tool-label">Pencil</div>
+        </div>
 
-            <input
-              type="file"
-              name="upload"
-              id="upload"
-              style="display: none"
-            />
-          </label>
-        </div>
-        <div class="tool" id="download">
-          <div class="tool-img">
-            <img
-              src="./resources/resources-master/NewIcons/Download.svg"
-              alt=""
-            />
+        <!-- Eraser Tool -->
+        <div class="tool-wrapper">
+          <div class="tool" id="eraser" title="Eraser">
+            <div class="tool-img">
+              <img
+                src="./resources/icons/eraser.svg"
+                alt="Eraser Tool"
+              />
+            </div>
+            <div class="tool-options" id="eraser-options">
+              <div class="size-display">Size: <span id="eraser-size-value">1</span></div>
+              <div class="eraser-slider">
+                <input
+                  type="range"
+                  name="eraser-size"
+                  id="eraser-size"
+                  min="1"
+                  max="40"
+                  value="1"
+                  title="Adjust eraser size"
+                />
+              </div>
+            </div>
           </div>
+          <div class="tool-label">Eraser</div>
         </div>
-        <div class="tool" id="undo">
-          <div class="tool-img">
-            <img src="./resources/resources-master/NewIcons/Undo.svg" alt="" />
+
+        <!-- Sticky Note Tool -->
+        <div class="tool-wrapper">
+          <div class="tool" id="sticky" title="Sticky Note">
+            <div class="tool-img">
+              <img
+                src="./resources/icons/sticky.svg"
+                alt="Sticky Note Tool"
+              />
+            </div>
           </div>
+          <div class="tool-label">Sticky Note</div>
         </div>
-        <div class="tool" id="redo">
-          <div class="tool-img">
-            <img src="./resources/resources-master/NewIcons/Redo.svg" alt="" />
+
+        <!-- Upload Image Tool -->
+        <div class="tool-wrapper">
+          <div class="tool" id="upload-img" title="Upload Image">
+            <label for="upload">
+              <div class="tool-img">
+                <img
+                  src="./resources/icons/photo.svg"
+                  alt="Upload Image"
+                />
+              </div>
+
+              <input
+                type="file"
+                name="upload"
+                id="upload"
+                style="display: none"
+                accept="image/*"
+              />
+            </label>
           </div>
+          <div class="tool-label">Upload Image</div>
+        </div>
+
+        <!-- Download Tool -->
+        <div class="tool-wrapper">
+          <div class="tool" id="download" title="Download">
+            <div class="tool-img">
+              <img
+                src="./resources/icons/download.svg"
+                alt="Download"
+              />
+            </div>
+          </div>
+          <div class="tool-label">Download</div>
+        </div>
+
+        <!-- Undo Tool -->
+        <div class="tool-wrapper">
+          <div class="tool" id="undo" title="Undo">
+            <div class="tool-img">
+              <img src="./resources/icons/undo.svg" alt="Undo" />
+            </div>
+          </div>
+          <div class="tool-label">Undo</div>
+        </div>
+
+        <!-- Redo Tool -->
+        <div class="tool-wrapper">
+          <div class="tool" id="redo" title="Redo">
+            <div class="tool-img">
+              <img
+                src="./resources/icons/redo.svg"
+                alt="Redo"
+              />
+            </div>
+          </div>
+          <div class="tool-label">Redo</div>
         </div>
       </div>
     </div>
